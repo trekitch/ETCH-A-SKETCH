@@ -1,14 +1,7 @@
-
-.grid-item{
-    padding: 1em;
-    text-align: center;
-    border: 1px solid #000;
-}
-
-
 #container{
     display: grid;
-    height: 70vh;
-    max-width: 410px;
-    box-sizing: content-box;
+    height: 500px;
+    width: 500px;
+    border: 2px solid red;
+    margin: auto;
 }
