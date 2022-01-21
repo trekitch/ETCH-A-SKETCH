@@ -4,6 +4,7 @@ const DEFAULT_COLOR = '#000000';
 
 const resetButton = document.querySelector('.reset');
 const eraseButton = document.querySelector('.erase');
+const rainbow = document.querySelector('.rainbow');
 const selectedColor = document.querySelector('#gridcolor');
 const slider = document.querySelector('#gridsize');
 let slideValue = document.querySelector('#demo');
@@ -58,6 +59,18 @@ function gridColor(color){
   });
 }
 
+function rainbowColor(){  
+  gridItems.forEach(griditem => {
+    griditem.addEventListener('mouseover', function(event){
+      let x = Math.floor(Math.random() * 256);
+      let y = Math.floor(Math.random() * 256);
+      let z = Math.floor(Math.random() * 256);
+      let bgcolor = `rgb(${x},${y},${z})`
+      event.target.style.backgroundColor = bgcolor;
+    });
+  });
+}
+
 selectedColor.addEventListener('input', function(){
   gridColor(this.value);
 })
@@ -75,9 +88,21 @@ resetButton.onclick = () => {
 };
 
 eraseButton.onclick = () =>{
-  gridItems.forEach(griditem => {
-    griditem.addEventListener('mouseover', function(event){
-        event.target.style.backgroundColor = '#FFFFFF';
+  if(eraseButton.checked === true){
+    gridItems.forEach(griditem => {
+      griditem.addEventListener('mouseover', function(event){
+          event.target.style.backgroundColor = '#FFFFFF';
+      });
     });
-  });
+  }else{
+    gridItems.forEach(griditem => {
+      griditem.addEventListener('mouseover', function(event){
+          event.target.style.backgroundColor = selectedColor.value;
+      });
+    });
+  }
+}
+
+rainbow.onclick = () => {
+  rainbowColor();
 }
