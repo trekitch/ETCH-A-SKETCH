@@ -14,12 +14,18 @@
         <div class="controls">
             <p>Color Mode:</p>
             <input type="color" name="gridcolor" id="gridcolor" value="#000000">
+            <button class="rainbow">Rainbow</button>
             <p>Reset:</p>
             <button class="reset">RESET GRID</button>
             <p>Grid Size: <span id=demo></span> </p>
             <input type="range" name="gridsize" id="gridsize" value="16" min="1" max="64">
             <p>Erase</p>
-            <button class="erase">Erase</button>
+            <label class="switch">
+                <input type="checkbox" unchecked class="erase">
+                <span class="slider round"></span>
+            </label>
+
+
         </div>
         <div class="container"></div>
     </div>
