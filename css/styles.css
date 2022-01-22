@@ -1,31 +1,52 @@
 *{
     padding: 0%;
     margin: 0%;
+    /* border: 1px solid red; */
+    font-family: 'Mochiy Pop P One', sans-serif;
 }
 
-h1{
+h1, .footer{
     text-align: center;
     padding: 24px 32px;
+    background-color: #D8DDDE;
 }
 
 .container{
     display: grid;
     height: 500px;
     width: 500px;
-    border: 2px solid grey;
+    color: white;
+    border: 2px solid black;
+    box-shadow: -5px 5px lightgrey;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 16px;
+    flex: 1;
 }
 
 .controls{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    background: #D9F7FA;
+    border: 1px solid black;
+    border-radius: 11px;
+    padding: 10px;
+    
 }
 
+/* Toggle buttons */
 .switch {
     position: relative;
     display: inline-block;
@@ -50,7 +71,7 @@ h1{
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   .slider:before {
     position: absolute;
     content: "";
@@ -64,11 +85,11 @@ h1{
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #2f75ff;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2f75ff;
   }
   
   input:checked + .slider:before {
@@ -79,9 +100,18 @@ h1{
   
   /* Rounded sliders */
   .slider.round {
-    border-radius: 34px;
+    border-radius: 30px;
   }
   
   .slider.round:before {
     border-radius: 50%;
+  }
+  
+  button {
+    padding: 16px;
+    border-radius: 30px;
+  }
+
+  input[type="color"] {
+    width: 100%;
   }
