@@ -32,7 +32,6 @@ function makeGrid(gridsize){
     for (let i = 1; i <= celltot; i++) {
       let cell = document.createElement('div');
       cell.classList.add('grid-item')
-      cell.style.backgroundColor = '#FFFFFF'
       cell.style.gridRow = row;
       cell.style.gridColumn = column;
       column += 1;
